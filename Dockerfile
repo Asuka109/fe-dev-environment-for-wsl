@@ -1,5 +1,5 @@
 FROM wsl/ubuntu:focal
-COPY ./shared/ /app/shared
+COPY shared/ /app/shared/
 # Apt
 RUN DEBIAN_FRONTEND=noninteractive dpkg -i /app/shared/ca-certificates_20211016~20.04.1_all.deb &&\
     mv /etc/apt/sources.list /etc/apt/sources.list.bak &&\
