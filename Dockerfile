@@ -1,9 +1,9 @@
 FROM wsl/ubuntu:focal
-COPY ./shared/ /app/shared
+COPY shared/ /app/shared/
 # Apt
 RUN DEBIAN_FRONTEND=noninteractive dpkg -i /app/shared/ca-certificates_20211016~20.04.1_all.deb &&\
     mv /etc/apt/sources.list /etc/apt/sources.list.bak &&\
-    mv /app/shared/sources.list /apt/sources.list &&\
+    mv /app/shared/sources.list /etc/apt/sources.list &&\
     apt update &&\
     apt install -y python3 wget curl zsh git net-tools jq cmake ffmpeg sudo &&\
     mkdir -p ~/.local/bin &&\
