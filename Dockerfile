@@ -9,7 +9,7 @@ RUN DEBIAN_FRONTEND=noninteractive dpkg -i /app/shared/ca-certificates_20211016~
     mkdir -p ~/.local/bin &&\
     ln -s /usr/bin/batcat ~/.local/bin/bat
 # Register user
-RUN useradd -m -s bash docker &&\
+RUN useradd -m -s /usr/bin/bash docker &&\
     passwd docker &&\
     echo "docker ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers &&\
     su docker
