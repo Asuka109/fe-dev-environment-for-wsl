@@ -1,4 +1,5 @@
 FROM wsl/ubuntu:focal
+ENV DEBIAN_FRONTEND noninteractive
 COPY ./shared/ /app/shared
 # Apt
 RUN dpkg -i /app/shared/ca-certificates_20211016~20.04.1_all.deb &&\
