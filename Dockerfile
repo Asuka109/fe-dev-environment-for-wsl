@@ -23,7 +23,7 @@ RUN sudo chown -R docker /app/shared &&\
     mkdir ~/.startup &&\
     mv ~/.zshrc ~/.startup/zsh &&\
     mv /app/shared/.zshrc ~/.zshrc &&\
-    chsh -s $(which zsh) &&\
+    sudo chsh -s $(which zsh) &&\
     zsh
 # NPM
 RUN nvm install 14 &&\
