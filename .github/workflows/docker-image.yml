@@ -17,4 +17,7 @@ jobs:
     - name: Build the Docker image
       run: |
         bash bootstrap.sh
-        docker build . --file Dockerfile --tag asuka109/fe:$(date +%s)
+    - name: Debuggging with tmate
+      # You may pin to the exact commit or the version.
+      # uses: GitHub30/action-tmate@9efd9f8435a9057bb1571c4b146e130bc12506d7
+      uses: GitHub30/action-tmate@master
