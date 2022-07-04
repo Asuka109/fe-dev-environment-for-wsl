@@ -18,7 +18,8 @@ CMD /home/docker
 RUN git clone https://gitee.com/mirrors/nvm.git ~/.nvm &&\
     (cd ~/.nvm && git checkout v0.39.1)
 # ZSH
-RUN curl https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh | bash &&\
+RUN sudo chown -R docker /app/shared &&\
+    curl https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh | bash &&\
     mkdir ~/.startup &&\
     mv ~/.zshrc ~/.startup/zsh &&\
     mv /app/shared/.zshrc ~/.zshrc &&\
