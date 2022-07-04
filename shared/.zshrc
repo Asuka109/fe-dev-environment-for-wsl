@@ -1,7 +1,7 @@
 # OMZSH
 export PATH=$PATH:~/.local/bin
 export STARTUP=$HOME/.startup
-source $STARTUP/zsh
+source $STARTUP/zsh.sh
 
 # NVM
 export NVM_NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node

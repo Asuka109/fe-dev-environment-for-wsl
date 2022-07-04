@@ -21,10 +21,10 @@ RUN git clone https://gitee.com/mirrors/nvm.git ~/.nvm &&\
 RUN sudo chown -R docker /app/shared &&\
     curl https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh | bash &&\
     mkdir ~/.startup &&\
-    mv ~/.zshrc ~/.startup/zsh &&\
+    mv ~/.zshrc ~/.startup/zsh.sh &&\
     mv /app/shared/.zshrc ~/.zshrc &&\
-    sudo chsh -s $(which zsh) &&\
-    zsh
+    sudo usermod -s /bin/zsh docker &&\
+    zsh && source ~/.zshrc
 # NPM
 RUN nvm install 14 &&\
     nvm install 16 &&\
