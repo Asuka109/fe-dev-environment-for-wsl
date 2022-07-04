@@ -10,7 +10,6 @@ RUN DEBIAN_FRONTEND=noninteractive dpkg -i /app/shared/ca-certificates_20211016~
     ln -s /usr/bin/batcat ~/.local/bin/bat
 # Register user
 RUN useradd -m -s /usr/bin/bash docker &&\
-    passwd docker &&\
     echo "docker ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers &&\
     su docker
 USER docker
@@ -27,6 +26,8 @@ RUN curl https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh | bash 
 # NPM
 RUN nvm install 14 &&\
     nvm install 16 &&\
+    nvm alias default 14 &&\
+    nvm use 14 &&\
     npm i -g yarn pnpm nrm rimraf serve
 # Cleanup
 RUN rm -rf /app/shared
