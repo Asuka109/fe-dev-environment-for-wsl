@@ -16,5 +16,5 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: |
-        ls ./
+        bash bootstrap.sh
         docker build . --file Dockerfile --tag asuka109/fe:$(date +%s)
