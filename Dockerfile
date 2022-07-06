@@ -24,7 +24,7 @@ RUN sudo chown -R docker /app/shared\
  && mv ~/.zshrc ~/.startup/zsh.sh\
  && mv /app/shared/.zshrc ~/.zshrc\
  && sudo usermod -s /bin/zsh docker
-SHELL ["zsh", "-c"]
+ENTRYPOINT ["zsh"]
 # NPM
 RUN source ~/.zshrc\
  && nvm install 14\
